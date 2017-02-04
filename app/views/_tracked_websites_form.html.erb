@@ -1,0 +1,25 @@
+<div id="website-list-form">
+  <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+  <form class="form-horizontal">
+    <% 3.times do |index| %>
+        <div class="form-group">
+          <div class="col-xs-8">
+            <% if @user_websites[index].present? %>
+                <input type="text" class="form-control" placeholder= "<%= "Enter site #{index + 1}" %>" value=<%= @user_websites[index].website.url %> data-id=<%= @user_websites[index].id %> >
+            <% else %>
+                <input type="text" class="form-control" placeholder= "<%= "Enter site #{index + 1}" %>" >
+            <% end %>
+          </div>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+      <div class="offset-sm-2 col-sm-10">
+        <button type="submit" class="btn btn-primary" onclick="add_tracked_websites(event)">Update</button>
+      </div>
+    </div>
+  </form>
+</div>
+

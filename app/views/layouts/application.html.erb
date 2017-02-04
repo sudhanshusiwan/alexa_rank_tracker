@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AlexaRankTracker</title>
+    <%= csrf_meta_tags %>
+    <%= yield :head %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render partial: 'layouts/header' %>
+
+    <div class="container">
+      <% flash.each do |key, value| %>
+          <div class="alert alert-info">
+            <%= value %>
+          </div>
+      <% end %>
+    </div>
+
+    <%= yield %>
+  </body>
+</html>

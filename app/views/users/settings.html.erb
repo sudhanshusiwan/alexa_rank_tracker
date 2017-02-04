@@ -1,0 +1,28 @@
+<%= javascript_include_tag 'users/settings' %>
+
+<script type="text/javascript" charset="utf-8">
+   var add_website_url = "<%= create_or_update_websites_path %>";
+</script>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="list-group" id="sidebar">
+        <a href="#" class="list-group-item">Tracked Websites</a>
+        <a href="#" class="list-group-item">Change Password</a>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <h2>Tracked Websites</h2>
+      <p>List of the websites that are being tracked.</p>
+      <hr class="col-md-12">
+      <%= render partial: '/tracked_websites_form' %>
+
+      <h2>Change Password</h2>
+      <p>Allows password change for current user</p>
+      <hr class="col-md-12">
+      <%= render partial: 'users/change_password' %>
+    </div>
+    <div class="span9"></div>
+  </div>
+</div>

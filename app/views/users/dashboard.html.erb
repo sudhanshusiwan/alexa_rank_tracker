@@ -1,0 +1,11 @@
+<%= stylesheet_link_tag 'users/dashboard' %>
+<% content_for :head do %>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<% end %>
+
+
+<script>
+  var chart_data = <%= @dashboard_chart_data.to_json.html_safe %>;
+</script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
