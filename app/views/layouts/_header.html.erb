@@ -15,7 +15,7 @@
 
       <% if current_user.present? %>
         <ul class="nav navbar-nav">
-          <li><%= link_to 'Settings', settings_user_path( current_user.id ) %></li>
+          <li><%= link_to 'Settings', settings_users_path %></li>
         </ul>
       <% end %>
 

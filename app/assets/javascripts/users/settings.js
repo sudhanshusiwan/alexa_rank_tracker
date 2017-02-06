@@ -9,6 +9,10 @@ function add_tracked_websites(event) {
         if (data.url) {
             params_array.push( data );
         }
+
+        if (index == 2){
+            return false;
+        }
     });
 
 

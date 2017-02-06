@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: 'users#dashboard'
 
   resources :users, only: [] do
-    get :settings, on: :member
+    get :settings, on: :collection
   end
 
   resources :websites, only: [] do

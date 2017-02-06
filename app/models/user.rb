@@ -15,6 +15,8 @@ class User < ApplicationRecord
 
   def create_or_update_websites( websites_array )
     websites_array.each do |website|
+      next if website[:url].blank?
+
       website = self.websites.where(url: website[:url]).first_or_initialize
       website.save!
 

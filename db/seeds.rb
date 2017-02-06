@@ -9,7 +9,7 @@ end
 Website.set_callback(:create, :after, :create_ranking)
 
 # Seeding random rankings for the created websites
-( ( Date.today - 100 )..Date.yesterday ).each do |date|
+( ( Date.current - 100 )..Date.yesterday ).each do |date|
   websites.each do |website|
     website.rankings.create!( alexa_global_rank: rand(1..500000), created_at: date.to_datetime )
   end
