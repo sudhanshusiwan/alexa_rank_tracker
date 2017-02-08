@@ -41,5 +41,7 @@ class Website < ApplicationRecord
 
   def create_ranking
     self.rankings.create!( alexa_global_rank: self.get_alexa_global_rank )
+
+    AlexaRankJob.perform_in(Time.now.seconds_until_end_of_day)
   end
 end
